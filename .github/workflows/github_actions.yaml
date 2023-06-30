@@ -40,4 +40,4 @@ jobs:
           git push
         env:
           username: CharlesGM
-          password: ${{ secrets.DOCKER_TOKEN }}
+          password: ${{ secrets.TOKEN }}
