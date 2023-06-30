@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: my-web-page
-        image: gachango/moringa-image:maroon
+        image: gachango/moringa-image:blue
         ports:
         - containerPort: 80
