@@ -3,7 +3,7 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - main  # Set this to your default branch name
+      - master  # Set this to your default branch name
 
 jobs:
   build-and-push:
@@ -24,4 +24,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: your-dockerhub-username/your-repo-name:latest
+          tags: gachangoe/moringa-image:latest
