@@ -30,7 +30,7 @@ jobs:
 
       - name: Checkout code
         run: |
-          git clone https://${{ secrets.GITHUB_USERNAME }}:${{ secrets.GITHUB_TOKEN }}@github.com/CharlesGM/Moringa-Argo.git
+          git clone https://${{ secrets.GITHUB_USERNAME }}:${{ secrets.DOCKER_TOKEN }}@github.com/CharlesGM/Moringa-Argo.git
           cd K8s
           sed -i 's|image: gachango/moringa-image:[0-9a-f]*|image: gachango/moringa-image:${{ github.sha }}|' deployment.yaml
           git config --global user.email "gachangocmbugua@gmail.com"
@@ -39,5 +39,5 @@ jobs:
           git commit -m "Update image tag"
           git push
         env:
-          username: ${{ secrets.GITHUB_USERNAME }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: CharlesGM
+          password: ${{ secrets.DOCKER_TOKEN }}
