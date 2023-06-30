@@ -1,4 +1,6 @@
 name: Build and Push Docker Image
+env:
+  moringaTargetBranch: master
 
 on:
   push:
@@ -12,16 +14,30 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
+    
       - name: Log in to Docker Hub
         uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-
+    
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
         with:
           context: .
           push: true
           tags: gachango/moringa-image:${{ github.sha }}
+    
+      - name: Edit values
+        run: |
+          git config --global user.email "gachangocmbugua@gmail.com"
+          git config --global user.name "CharlesGM"
+          git checkout master
+          git pull origin master
+          yq e -i '.image.tag="'${{ steps.define_env.outputs.github-sha-short }}'"' 'deployment.yaml'
+          git add deployment.yaml
+          git commit -m "Update tag in deployment.yaml"
+          git push origin master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
