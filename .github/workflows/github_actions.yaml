@@ -34,7 +34,7 @@ jobs:
           git config --global user.name "CharlesGM"
           git checkout master
           git pull origin master
-          yq e -i '.image.tag="'${{ steps.define_env.outputs.github-sha-short }}'"' 'deployment.yaml'
+          yq e -i '.image.tag="'${{ steps.define_env.outputs.github-sha-short }}'"' 'K8s/deployment.yaml'
           git add deployment.yaml
           git commit -m "Update tag in deployment.yaml"
           git push origin master
