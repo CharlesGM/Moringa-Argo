@@ -29,15 +29,15 @@ jobs:
           tags: gachango/moringa-image:${{ github.sha }}
 
       - name: Checkout code
-      run: |
-        git clone https://username:<your-github-token>@github.com/Moringa-Argo/repo.git
-        cd repo/K8s
-        sed -i 's|image: gachango/moringa-image:[0-9a-f]*|image: gachango/moringa-image:${{ github.sha }}|' deployment.yaml
-        git config --global user.email "gachangocmbugua@gmail.com"
-        git config --global user.name "CharlesGM"
-        git add deployment.yaml
-        git commit -m "Update image tag"
-        git push
-      env:
-        username: ${{ secrets.GITHUB_USERNAME }}
-        your-github-token: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git clone https://username:<your-github-token>@github.com/Moringa-Argo/repo.git
+          cd repo/K8s
+          sed -i 's|image: gachango/moringa-image:[0-9a-f]*|image: gachango/moringa-image:${{ github.sha }}|' deployment.yaml
+          git config --global user.email "gachangocmbugua@gmail.com"
+          git config --global user.name "CharlesGM"
+          git add deployment.yaml
+          git commit -m "Update image tag"
+          git push
+        env:
+          username: ${{ secrets.GITHUB_USERNAME }}
+          your-github-token: ${{ secrets.GITHUB_TOKEN }}
