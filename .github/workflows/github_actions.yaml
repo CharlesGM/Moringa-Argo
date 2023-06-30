@@ -24,4 +24,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: gachangoe/moringa-image:latest
+          tags: gachango/moringa-image:latest
