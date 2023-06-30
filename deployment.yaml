@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: moringa-web-page-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: moringa-web-page
+  template:
+    metadata:
+      labels:
+        app: moringa-web-page
+    spec:
+      containers:
+      - name: my-web-page
+        image: gachango/moringa-image
+        ports:
+        - containerPort: 80
