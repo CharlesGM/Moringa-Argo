@@ -1,5 +1,40 @@
-# Use the official Nginx image as a base
-FROM nginx:alpine
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Color Example</title>
+    <style>
+        /* Remove default margins and padding */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        /* Make the div fill the entire page */
+        #myDiv {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="myDiv">
+        This is a div.
+    </div>
 
-# Copy the HTML file to the Nginx container
-COPY index.html /usr/share/nginx/html/index.html
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var myDiv = document.getElementById('myDiv');
+
+            // Change the background color of the div to green
+            myDiv.style.backgroundColor = 'green';
+
+            // Log to the console
+            console.log('The color of the div has been changed to green.');
+        });
+    </script>
+</body>
+</html>
