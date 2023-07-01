@@ -24,7 +24,7 @@ All this can be configured and added to this repo. I may do that for future clas
 4. Docker Desktop
 5. Knowledge of cloning, adding, commiting and pushing code to github
 
-### Hint: 
+#### Hint: 
 For some commands and leads, consult chatGPT 
 >
 >
