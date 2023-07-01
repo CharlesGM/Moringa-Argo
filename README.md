@@ -22,7 +22,12 @@ All this can be configured and added to this repo. I may do that for future clas
 2. Git
 3. Docker Hub account
 4. Docker Desktop
-### Commands
+5. Knowledge of cloning, adding, commiting and pushing code to github
+
+### Hint: 
+For some commands and leads, consult chatGPT 
+>
+>
 
 
 # Part A - K8s
