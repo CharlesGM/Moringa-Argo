@@ -6,6 +6,7 @@ Learning at Moringa
 1. Minikube
 2. Git
 3. Docker Hub account
+4. Docker engine
 ### Commands
 
 1. Start minikube
