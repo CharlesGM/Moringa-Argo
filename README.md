@@ -69,8 +69,8 @@ So far, your CI/CD should work well. Consult ArgoCD documentations for deploying
 
 Lastly, as of now, to change the color of the web app, you need to edit *the color name* in index.html, K8s/deployment.yaml and github_actions.yaml section of color. This will do the following:
 
-        i. Index.html edits the app color itself \
-        ii. github_actions.yaml - editing this file creates a tag of the new color and pushes the image to docker hub with the new color as tag \
+        i.   index.html edits the app color itself \
+        ii.  github_actions.yaml - editing this file creates a tag of the new color and pushes the image to docker hub with the new color as tag \
         iii. K8s/deployment.yaml - editing this file with the new color will enable ArgoCD to pull the image with the same tag and deploy it to cluster.
 
 However, the above steps are manual and can be automated. More edits coming to rectify this. But for now, to see changes as you build new images, you must follow the steps above.
