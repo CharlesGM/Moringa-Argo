@@ -1,4 +1,4 @@
-# Moringa Argo Playgroud
+# Moringa Argo Playground
 Learning at Moringa
 
 ## Prerequisites
