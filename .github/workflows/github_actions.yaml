@@ -26,7 +26,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: gachango/moringa-image:green
+          tags: gachango/moringa-image:olive
 
 #      - name: Checkout code
 #        env:
