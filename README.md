@@ -3,13 +3,15 @@ Learning at Moringa
 
 ## Intro
 Using this repo, you will be able to learn the basics of setting up argo locally and deploying your first code. Some of what is covered includes:
-        i. K8s basics
-        ii. Building docker images using github actions and pushing them to dockerhub
+
+        i.   K8s basics
+        ii.  Building docker images using github actions and pushing them to dockerhub
         iii. Tweak the web app and see the changes get deployed
 
 What is not covered:
-        i. SSL configurations
-        ii. Ingress controllers
+
+        i.   SSL configurations
+        ii.  Ingress controllers
         iii. Helm
 
 All this can be configured and added to this repo. I may do that for future classes. But if you can, happy to see your contribution.
