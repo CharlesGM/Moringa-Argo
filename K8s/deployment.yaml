@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: my-web-page
-        image: gachango/moringa-image:orange
+        image: gachango/moringa-image:olive
         imagePullPolicy: Always
         ports:
         - containerPort: 80
