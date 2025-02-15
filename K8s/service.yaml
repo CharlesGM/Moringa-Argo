@@ -1,12 +1,21 @@
+---
+# Specifies the Kubernetes API version for the Service
 apiVersion: v1
+# Defines this as a Service resource type
 kind: Service
 metadata:
+  # Name of the service
   name: moringa-web-page-service
 spec:
+  # Selects pods with this label to receive traffic
   selector:
     app: moringa-web-page
   ports:
+    # Port configuration
     - protocol: TCP
+      # Port exposed by the service
       port: 80
+      # Port on the pod that traffic will be sent to
       targetPort: 80
+  # Type of service (ClusterIP, NodePort, or LoadBalancer)
   type: ClusterIP

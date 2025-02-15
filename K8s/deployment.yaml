@@ -1,20 +1,57 @@
+# Specifies the Kubernetes API version being used for this Deployment
 apiVersion: apps/v1
+# Defines that this is a Deployment resource type
 kind: Deployment
 metadata:
+  # Name of the deployment
   name: moringa-web-page-deployment
 spec:
+  # Number of identical pods to run
   replicas: 1
   selector:
+    # Labels used to identify which pods this deployment should manage
     matchLabels:
       app: moringa-web-page
   template:
     metadata:
+      # Labels attached to the pods created by this template
       labels:
         app: moringa-web-page
     spec:
       containers:
+      # Container specifications
       - name: my-web-page
-        image: gachango/moringa-image:mediumturquoise
+        # Docker image to use (format: repository/image:tag)
+        image: gachango/moringa:v1
+        # Always pull the image, even if present locally
         imagePullPolicy: Always
         ports:
+        # Port that the container will listen on
         - containerPort: 80
+
+
+
+
+
+
+## ClusterIP (Default):
+# - Creates a virtual IP inside the cluster
+# - Only accessible from within the cluster
+# - Good for internal communication between services
+# - Use case: Backend services that don't need external access
+
+
+## NodePort:
+# - Extends ClusterIP
+# - Opens a specific port on all cluster nodes
+# - Accessible from outside using any node's IP and the assigned port
+# - Port range: 30000-32767
+# - Use case: Development and testing, when you need external access but don't have a cloud provider's load balancer
+
+
+## LoadBalancer:
+# - Extends NodePort
+# - Creates an external load balancer in cloud providers (AWS, GCP, Azure)
+# - Assigns a fixed, external IP to the service
+# - Automatically distributes external traffic
+# - Use case: Production applications that need reliable external access
